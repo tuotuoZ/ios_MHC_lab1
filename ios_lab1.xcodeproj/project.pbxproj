@@ -10,8 +10,8 @@
 		A113AFF71F2A3E048D45028A /* Pods_ios_lab1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42E943B77D65814DBF7F15D /* Pods_ios_lab1Tests.framework */; };
 		ACF13A1F6A9A914D141003A8 /* Pods_ios_lab1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624F266F02D2AE1E595E2E51 /* Pods_ios_lab1.framework */; };
 		B0C9A40CE161FAE3AFA050D6 /* Pods_ios_lab1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF413FF503052050F45765F /* Pods_ios_lab1UITests.framework */; };
+		FE6E760C214F7722002444FC /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6E760B214F7722002444FC /* PhotoCell.swift */; };
 		FE9BB994214EB5C300D55EDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BB993214EB5C300D55EDB /* AppDelegate.swift */; };
-		FE9BB996214EB5C300D55EDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BB995214EB5C300D55EDB /* ViewController.swift */; };
 		FE9BB999214EB5C300D55EDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9BB997214EB5C300D55EDB /* Main.storyboard */; };
 		FE9BB99B214EB5C400D55EDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE9BB99A214EB5C400D55EDB /* Assets.xcassets */; };
 		FE9BB99E214EB5C400D55EDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE9BB99C214EB5C400D55EDB /* LaunchScreen.storyboard */; };
@@ -47,9 +47,9 @@
 		E416E5357803A65514C132E7 /* Pods-ios_lab1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_lab1UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_lab1UITests/Pods-ios_lab1UITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE1AFF511F6B156558E57F7A /* Pods-ios_lab1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_lab1Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios_lab1Tests/Pods-ios_lab1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FADB878C83375BE96001735D /* Pods-ios_lab1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_lab1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_lab1Tests/Pods-ios_lab1Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FE6E760B214F7722002444FC /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		FE9BB990214EB5C300D55EDB /* ios_lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE9BB993214EB5C300D55EDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE9BB995214EB5C300D55EDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE9BB998214EB5C300D55EDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE9BB99A214EB5C400D55EDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE9BB99D214EB5C400D55EDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -141,11 +141,11 @@
 			children = (
 				FE9BB9C3214EC12000D55EDB /* View Controllers */,
 				FE9BB993214EB5C300D55EDB /* AppDelegate.swift */,
-				FE9BB995214EB5C300D55EDB /* ViewController.swift */,
 				FE9BB997214EB5C300D55EDB /* Main.storyboard */,
 				FE9BB99A214EB5C400D55EDB /* Assets.xcassets */,
 				FE9BB99C214EB5C400D55EDB /* LaunchScreen.storyboard */,
 				FE9BB99F214EB5C400D55EDB /* Info.plist */,
+				FE6E760B214F7722002444FC /* PhotoCell.swift */,
 			);
 			path = ios_lab1;
 			sourceTree = "<group>";
@@ -350,17 +350,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ios_lab1/Pods-ios_lab1-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/OAuthSwiftAlamofire/OAuthSwiftAlamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwiftAlamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -392,8 +390,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE6E760C214F7722002444FC /* PhotoCell.swift in Sources */,
 				FE9BB9C2214EC11200D55EDB /* PhotosViewController.swift in Sources */,
-				FE9BB996214EB5C300D55EDB /* ViewController.swift in Sources */,
 				FE9BB994214EB5C300D55EDB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

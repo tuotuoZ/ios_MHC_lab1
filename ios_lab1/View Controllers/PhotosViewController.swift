@@ -7,30 +7,22 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
+    @IBOutlet weak var PhotoCell: PhotoCell!
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "This is row \(indexPath.row)"
-        
-        return cell
-    }
-    
-
     var posts: [[String: Any]] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //configure the datasource and delegate
+        
+        // Do any additional setup after loading the view.
+        
         tableView.delegate = self
         tableView.dataSource = self
         // Network request snippet
@@ -44,32 +36,58 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                 print(dataDictionary)
                 
-                // Get the posts and store in posts property
+                // TODO: Get the posts and store in posts property
                 // Get the dictionary from the response key
                 let responseDictionary = dataDictionary["response"] as! [String: Any]
                 // Store the returned array of dictionaries in our posts property
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 
                 // TODO: Reload the table view
+                self.tableView.reloadData()
+
             }
         }
         task.resume()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
 
+        let post = posts[indexPath.row]
+        if let photos = post["photos"] as? [[String: Any]] {
+            // photos is NOT nil, we can use it!
+            // TODO: Get the photo url
+            // 1.
+            let photo = photos[0]
+            // 2.
+            let originalSize = photo["original_size"] as! [String: Any]
+            // 3.
+            let urlString = originalSize["url"] as! String
+            // 4.
+            let url = URL(string: urlString)
+            
+            cell.PhotoCell.af_setImage(withURL: url!)
+        }
+        
+        return cell
+    }
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
