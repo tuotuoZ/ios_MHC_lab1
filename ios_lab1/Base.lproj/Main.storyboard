@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="6Xw-F8-2LZ">
-    <device id="retina4_0" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OzE-u7-tOY">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,30 +13,35 @@
         <scene sceneID="tBv-c9-7Ey">
             <objects>
                 <viewController id="6Xw-F8-2LZ" customClass="PhotosViewController" customModule="ios_lab1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oyb-Wi-pVv"/>
+                        <viewControllerLayoutGuide type="bottom" id="qsy-1R-WkF"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p34-7N-tTe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="98b-Ys-x9c">
-                                <rect key="frame" x="16" y="27" width="288" height="521"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="98b-Ys-x9c">
+                                <rect key="frame" x="0.0" y="27" width="375" height="640"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="280" id="v0W-X5-5HM" customClass="PhotoCell" customModule="ios_lab1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="288" height="280"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="280" id="v0W-X5-5HM" customClass="PhotoCell" customModule="ios_lab1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v0W-X5-5HM" id="2s5-07-RIU">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="279.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="279.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="EDs-3u-OWa">
-                                                    <rect key="frame" x="0.0" y="11" width="288" height="268"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EDs-3u-OWa">
+                                                    <rect key="frame" x="0.0" y="-29" width="375" height="268"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="PhotoCell" destination="EDs-3u-OWa" id="oWf-uJ-VPu"/>
+                                            <segue destination="7oW-RF-i2S" kind="show" id="5bb-Nc-Foa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -48,13 +53,59 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aMc-0S-vR6"/>
                     <connections>
                         <outlet property="tableView" destination="98b-Ys-x9c" id="hMJ-Ab-g8W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nea-F2-KJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="528" y="196"/>
+            <point key="canvasLocation" x="1986.4000000000001" y="206.44677661169416"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="gUV-57-iTe">
+            <objects>
+                <viewController id="7oW-RF-i2S" customClass="PhotoDetailsViewController" customModule="ios_lab1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Zi-Cz-sco"/>
+                        <viewControllerLayoutGuide type="bottom" id="dJC-d7-mrq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bhK-kW-h1b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eih-oR-1jW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="singleImageView" destination="Eih-oR-1jW" id="zBq-uJ-503"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sym-pi-aO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2724" y="206.44677661169416"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8el-71-p90">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OzE-u7-tOY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VM1-E5-OT8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Xw-F8-2LZ" kind="relationship" relationship="rootViewController" id="yyK-ff-TYF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMN-FM-HTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="207.04225352112675"/>
         </scene>
     </scenes>
 </document>

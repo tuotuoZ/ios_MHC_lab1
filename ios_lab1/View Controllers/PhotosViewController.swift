@@ -16,7 +16,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var PhotoCell: PhotoCell!
     
     var posts: [[String: Any]] = []
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,6 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 print(error.localizedDescription)
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(dataDictionary)
                 
                 // TODO: Get the posts and store in posts property
                 // Get the dictionary from the response key
@@ -44,7 +43,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 // TODO: Reload the table view
                 self.tableView.reloadData()
-
+                
             }
         }
         task.resume()
@@ -61,7 +60,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
-
+        
         let post = posts[indexPath.row]
         if let photos = post["photos"] as? [[String: Any]] {
             // photos is NOT nil, we can use it!
@@ -80,14 +79,19 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         
         return cell
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! PhotoDetailsViewController
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let post = posts[indexPath.row]
+            if let photos = post["photos"] as? [[String: Any]]{
+                let photo = photos[0]
+                vc.photo = photo
+            }
+        }
+    }
+    
+    
+
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D57C6CD215866270020ABA5 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D57C6CC215866270020ABA5 /* PhotoDetailsViewController.swift */; };
 		A113AFF71F2A3E048D45028A /* Pods_ios_lab1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42E943B77D65814DBF7F15D /* Pods_ios_lab1Tests.framework */; };
 		ACF13A1F6A9A914D141003A8 /* Pods_ios_lab1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624F266F02D2AE1E595E2E51 /* Pods_ios_lab1.framework */; };
 		B0C9A40CE161FAE3AFA050D6 /* Pods_ios_lab1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF413FF503052050F45765F /* Pods_ios_lab1UITests.framework */; };
@@ -41,6 +42,7 @@
 		624F266F02D2AE1E595E2E51 /* Pods_ios_lab1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_lab1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6649298600A26178DB8C2379 /* Pods-ios_lab1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_lab1UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios_lab1UITests/Pods-ios_lab1UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BF413FF503052050F45765F /* Pods_ios_lab1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_lab1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D57C6CC215866270020ABA5 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		A08395CB9E80D682A53CBEA8 /* Pods-ios_lab1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_lab1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios_lab1/Pods-ios_lab1.debug.xcconfig"; sourceTree = "<group>"; };
 		C42E943B77D65814DBF7F15D /* Pods_ios_lab1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_lab1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D592B3DEA36E15214D3C40E9 /* Pods-ios_lab1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios_lab1.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios_lab1/Pods-ios_lab1.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				FE9BB9C1214EC11200D55EDB /* PhotosViewController.swift */,
+				7D57C6CC215866270020ABA5 /* PhotoDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D57C6CD215866270020ABA5 /* PhotoDetailsViewController.swift in Sources */,
 				FE6E760C214F7722002444FC /* PhotoCell.swift in Sources */,
 				FE9BB9C2214EC11200D55EDB /* PhotosViewController.swift in Sources */,
 				FE9BB994214EB5C300D55EDB /* AppDelegate.swift in Sources */,
@@ -567,7 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A8CYX354VR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ios_lab1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -586,7 +590,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A8CYX354VR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ios_lab1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
